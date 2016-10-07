@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import style from './style';
 
+function getFirstName(name) {
+  return name.split(' ')[0];
+}
+
 export default class CommentList extends Component {
   constructor(props, ...args) {
     super(props, ...args);
@@ -35,9 +39,14 @@ export default class CommentList extends Component {
 
   renderComment(comment, key) {
     let user = this.usersMap[comment.userId];
+
     if (!user) {
       return null;
     }
+
+    const currentUser = this.props.user;
+    const userName = (currentUser.id === user.id) ? 'Me' : getFirstName(user.name);
+
     let commentStyle = style.commentItem;
     if (comment.loading) {
       commentStyle = style.commentItemloading;
@@ -49,7 +58,7 @@ export default class CommentList extends Component {
         </div>
         <div style={style.commentContent}>
           <div style={style.commentHead}>
-            <span style={style.commentUser}>{user.name}</span>
+            <span style={style.commentUser}>{userName}</span>
             <span style={style.commentTime}>{this.formatTime(comment.time)}</span>
           </div>
           <span style={style.commentText}>{comment.text}</span>
