@@ -1,25 +1,9 @@
 # Comments Addon
 
-This Storybook addon allows you to add comments for your stories. This addon works on [React Storybook](https://github.com/kadirahq/react-storybook).
+This contents of this repo was moved to the [Storybook monorepo](https://github.com/storybooks/storybook/) and the NPM package name has been changed.
 
---- 
+- The old name of the package was: **@kadira/storybook-addon-comments**
+- The new name of the package is: **@storybook/addon-comments**
+- The location of the code is: https://github.com/storybooks/storybook/tree/master/addons/comments
 
-**This repo has been deprecated because it's now included in https://github.com/storybooks/storybook**
-
----
-
-![](docs/screenshot.png)
-
-## Getting Started
-
-First, install the addon
-
-```shell
-npm install -D @kadira/storybook-addon-comments
-```
-
-Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
-
-```js
-import '@kadira/storybook-addon-comments/register';
-```
+The repo you're looking at now is out of date and no longer maintained.
